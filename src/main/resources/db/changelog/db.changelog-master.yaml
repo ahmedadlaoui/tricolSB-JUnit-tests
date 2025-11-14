@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/tables/Supplier.sql
+  - include:
+      file: db/changelog/tables/product.sql
+  - include:
+      file: db/changelog/tables/GoodsIssue.sql
+  - include:
+      file: db/changelog/tables/PurchaseOrder.sql
+  - include:
+      file: db/changelog/tables/PurchaseOrderLine.sql
+  - include:
+      file: db/changelog/tables/GoodsIssueLine.sql
+  - include:
+      file: db/changelog/tables/StockLot.sql
+  - include:
+      file: db/changelog/tables/StockMovement.sql

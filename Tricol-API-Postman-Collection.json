@@ -1,0 +1,973 @@
+{
+    "info": {
+        "_postman_id": "tricol-v2-sb-collection",
+        "name": "Tricol Warehouse Management System API",
+        "description": "Complete API collection for Tricol warehouse management system",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Suppliers",
+            "item": [
+                {
+                    "name": "Get All Suppliers",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/suppliers",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "suppliers"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Supplier By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/suppliers/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "suppliers",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Supplier",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"companyName\": \"TechSupply Co\",\n  \"ice\": \"ICE123456789\",\n  \"contactPerson\": \"John Doe\",\n  \"email\": \"john@techsupply.com\",\n  \"phone\": \"0612345678\",\n  \"address\": \"123 Main Street\",\n  \"city\": \"Casablanca\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/suppliers",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "suppliers"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Supplier",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"companyName\": \"TechSupply Co Updated\",\n  \"ice\": \"ICE123456789\",\n  \"contactPerson\": \"John Doe\",\n  \"email\": \"john.updated@techsupply.com\",\n  \"phone\": \"0612345678\",\n  \"address\": \"123 Main Street\",\n  \"city\": \"Casablanca\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/suppliers/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "suppliers",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Supplier",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/suppliers/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "suppliers",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Products",
+            "item": [
+                {
+                    "name": "Get All Products",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/products",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "products"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Product By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/products/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "products",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Product Stock Detail",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/products/1/stock",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "products",
+                                "1",
+                                "stock"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Product",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"reference\": \"PROD-001\",\n  \"name\": \"Laptop HP\",\n  \"description\": \"HP Laptop i7 16GB RAM\",\n  \"category\": \"Electronics\",\n  \"unitPrice\": 8500.00,\n  \"unitOfMeasure\": \"UNIT\",\n  \"reorderPoint\": 5\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/products",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "products"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Product",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"reference\": \"PROD-001\",\n  \"name\": \"Laptop HP Updated\",\n  \"description\": \"HP Laptop i7 32GB RAM\",\n  \"category\": \"Electronics\",\n  \"unitPrice\": 9000.00,\n  \"unitOfMeasure\": \"UNIT\",\n  \"reorderPoint\": 5\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/products/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "products",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Product",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/products/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "products",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Purchase Orders",
+            "item": [
+                {
+                    "name": "Get All Purchase Orders",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Purchase Order By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Purchase Orders By Supplier",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders/supplier/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders",
+                                "supplier",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Purchase Order",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"supplierId\": 1,\n  \"orderDate\": \"2025-01-15\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Purchase Order",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"supplierId\": 1,\n  \"orderDate\": \"2025-01-16\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Validate Purchase Order",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders/1/validate",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders",
+                                "1",
+                                "validate"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Receive Purchase Order",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders/1/reception",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders",
+                                "1",
+                                "reception"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Cancel Purchase Order",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders/1/cancel",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders",
+                                "1",
+                                "cancel"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Purchase Order",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/orders/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "orders",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order Lines",
+            "item": [
+                {
+                    "name": "Get All Order Lines",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/order-lines",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "order-lines"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Order Line By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/order-lines/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "order-lines",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Order Lines By Order ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/order-lines/order/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "order-lines",
+                                "order",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Order Line",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"purchaseOrderId\": 1,\n  \"productId\": 1,\n  \"quantity\": 10,\n  \"unitPrice\": 8500.00\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/order-lines",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "order-lines"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Order Line",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"productId\": 1,\n  \"quantity\": 15,\n  \"unitPrice\": 8500.00\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/order-lines/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "order-lines",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Order Line",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/order-lines/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "order-lines",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Goods Issues",
+            "item": [
+                {
+                    "name": "Get All Goods Issues",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/goods-issues",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "goods-issues"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Goods Issue By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/goods-issues/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "goods-issues",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Create Goods Issue",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"issueDate\": \"2025-01-15\",\n  \"recipient\": \"Customer ABC\",\n  \"issueLines\": [\n    {\n      \"productId\": 1,\n      \"quantity\": 5,\n      \"unitPrice\": 9000.00\n    }\n  ]\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/goods-issues",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "goods-issues"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Update Goods Issue",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"issueDate\": \"2025-01-16\",\n  \"recipient\": \"Customer ABC Updated\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/goods-issues/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "goods-issues",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Validate Goods Issue",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/goods-issues/1/validate",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "goods-issues",
+                                "1",
+                                "validate"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Cancel Goods Issue",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/goods-issues/1/cancel",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "goods-issues",
+                                "1",
+                                "cancel"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Delete Goods Issue",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/goods-issues/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "goods-issues",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Stock Movements",
+            "item": [
+                {
+                    "name": "Get All Stock Movements",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/stock-movements",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "stock-movements"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Stock Movement By ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/stock-movements/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "stock-movements",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Stock Movements By Product",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/stock-movements/product/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "stock-movements",
+                                "product",
+                                "1"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Stock",
+            "item": [
+                {
+                    "name": "Get Global Stock",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/stock",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "stock"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Product Stock Detail",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/stock/product/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "stock",
+                                "product",
+                                "1"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Total Stock Valuation",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/stock/valuation",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "stock",
+                                "valuation"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "Get Stock Alerts",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:8080/api/v1/stock/alerts",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "v1",
+                                "stock",
+                                "alerts"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
